@@ -45,6 +45,10 @@ m&.&d, 4097, \, \, 3599, 498, \, \, \, \, \, \
 
 ## 口令中的英文单词的使用统计
 
-`python main.py --word_dic ./data/words.txt --datafile [csdn | yahoo] --output output/yahoo_result.txt --cs [True | False]`
+文件：`main.py`，`word_utils.py`
 
-匹配密码中的英文单词，并设定是否区分大小写，最后根据单词出现的频率排序
+用法：`python main.py --word_dic ./data/words.txt --datafile [csdn | yahoo] --output output/yahoo_result.txt --cs [True | False]`
+
+数据文件：除了和日期模式统计一样的 `json` 文件之外，需要添加英语单词的字典，存储在 `./data/words.txt`, 每一行是一个单词。
+
+匹配密码中的英文单词，并设定是否区分大小写，最后根据单词出现的频率排序并输出到文件。
