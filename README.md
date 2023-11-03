@@ -4,13 +4,13 @@
 
 用法：`python main.py --mode date --datafile [csdn | yahoo]`
 
-数据文件：`csdn.json`或`yahoo.json`：json格式的列表数据，列表每一项为一条口令
+数据文件：`csdn.json`或`yahoo.json`：json 格式的列表数据，列表每一项为一条口令
 
 输出：
 
 1. `csdn_match.json`或`yahoo_match.json`，存放 `模式`-`模式对应的口令列表` 的映射
 
-2. 命令行打印csv格式的统计结果，如：
+2. 命令行打印 csv 格式的统计结果，如：
 
 ```
 构成成分\顺序, 总计, 年月, 月年, 月日, 日月, 年月日, 月日年, 日月年, 年日月, 月年日, 日年月
@@ -37,12 +37,18 @@ m&\&d, 0, \, \, 0, 0, \, \, \, \, \, \
 m&.&d, 4097, \, \, 3599, 498, \, \, \, \, \, \
 ```
 
-
-
-
-
 ## 口令中的高频词统计
 
 `python main.py --mode token --datafile [csdn | yahoo]`
 
-训练BPE tokenizer，从口令数据集中提取高频子串（token），结果按照出现频率排序
+训练 BPE tokenizer，从口令数据集中提取高频子串（token），结果按照出现频率排序
+
+## 口令中的英文单词的使用统计
+
+文件：`main.py`，`word_utils.py`
+
+用法：`python main.py --word_dic ./data/words.txt --datafile [csdn | yahoo] --output output/yahoo_result.txt --cs [True | False]`
+
+数据文件：除了和日期模式统计一样的 `json` 文件之外，需要添加英语单词的字典，存储在 `./data/words.txt`, 每一行是一个单词。
+
+匹配密码中的英文单词，并设定是否区分大小写，最后根据单词出现的频率排序并输出到文件。
