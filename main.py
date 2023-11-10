@@ -1,5 +1,6 @@
 from date_utils import *
 from word_utils import *
+from Element_Structure_analysis import *
 
 def getargs():
     parser = argparse.ArgumentParser(description='date pattern matcher and password word analyzer')
@@ -30,5 +31,6 @@ if __name__ == '__main__':
     #     tocsv(date_match)
     # elif args.mode=='token':
     #     get_vocab_freq(args)
-        
+    if args.mode == 'structure':
+        analysis_element_structure(args)
     analyze_passwords(args)
