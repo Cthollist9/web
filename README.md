@@ -55,7 +55,7 @@ m&.&d, 4097, \, \, 3599, 498, \, \, \, \, \, \
 
 ## 口令元素和结构分析
 
-文件:'Element_Structure_analysis.py'
+文件: `Element_Structure_analysis.py`
 
 用法：`python main.py --mode structure --datafile [csdn | yahoo]`
 
